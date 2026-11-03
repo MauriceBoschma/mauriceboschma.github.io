@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maurice Boschma | Personal Brand</title>
+<title>BoschmaProjects</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,6 +90,26 @@ nav a{
     margin-bottom:30px;
 }
 
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:64px;
+}
+
+.hero-copy{
+    flex:1;
+}
+
+.hero-portrait{
+    width:min(32vw,360px);
+    aspect-ratio:3 / 4;
+    object-fit:cover;
+    object-position:center 35%;
+    border-radius:24px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
 .btn{
     display:inline-block;
     padding:14px 28px;
@@ -153,9 +173,31 @@ section{
 }
 
 .value{
-    padding:10px 20px;
-    border-radius:999px;
+    flex:1 1 220px;
+    padding:20px;
+    border-radius:16px;
     background:rgba(255,255,255,.1);
+}
+
+.value strong{
+    display:block;
+    margin-bottom:6px;
+    color:white;
+}
+
+.project-image{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-bottom:20px;
+    border-radius:12px;
+}
+
+.project-link{
+    display:inline-block;
+    margin-top:12px;
+    color:var(--primary);
+    font-weight:600;
 }
 
 .contact{
@@ -179,6 +221,18 @@ footer{
 }
 
 @media(max-width:768px){
+
+.hero-content{
+    flex-direction:column-reverse;
+    align-items:flex-start;
+    gap:32px;
+    padding:120px 0 50px;
+}
+
+.hero-portrait{
+    width:min(72vw,300px);
+    max-height:350px;
+}
 
 .hero h1{
     font-size:2.5rem;
@@ -205,29 +259,28 @@ nav ul{
         <div class="logo">Maurice Boschma</div>
 
         <ul>
-            <li><a href="#brand">Brand</a></li>
-            <li><a href="#ervaring">Ervaring</a></li>
-            <li><a href="#persoonlijk">Persoonlijk</a></li>
+            <li><a href="#brand">Mijn Interesses</a></li>
+            <li><a href="#ervaring">Projectervaring</a></li>
+            <li><a href="#persoonlijk">Waar sta ik voor</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
 
 <header class="hero">
-    <div class="container">
-
-        <h1>Creativity into Experience.<br>Ideas into Action.</h1>
-
-        <p>
-            Student Event Management met een passie voor conceptontwikkeling,
-            branding, placemaking en experience design. Ik ontwikkel ideeën die
-            mensen, organisaties en locaties verbinden en vertaal deze naar
-            concrete projecten en ervaringen.
-        </p>
-
-        <a href="#ervaring" class="btn btn-primary">Bekijk Projecten</a>
-        <a href="#contact" class="btn btn-secondary">Neem Contact Op</a>
-
+    <div class="container hero-content">
+        <div class="hero-copy">
+            <h1>Van idee naar beleving</h1>
+            <p>
+                Student Event Management met een passie voor conceptontwikkeling.
+                Ik krijg energie van het bedenken en ontwikkelen van creatieve concepten
+                die mensen, organisaties en locaties met elkaar verbinden. Van een eerste
+                idee tot een herkenbare identiteit en een ervaring die daadwerkelijk impact maakt.
+            </p>
+            <a href="#ervaring" class="btn btn-primary">Bekijk Projecten</a>
+            <a href="#contact" class="btn btn-secondary">Neem Contact Op</a>
+        </div>
+        <img class="hero-portrait" src="images/maurice-boschma.jpg" alt="Portretfoto van Maurice Boschma">
     </div>
 </header>
 
@@ -235,40 +288,28 @@ nav ul{
 
     <div class="container">
 
-        <h2 class="section-title">Brand</h2>
-
-        <p>
-            Als Student Event Management ontwikkel ik mij binnen
-            conceptontwikkeling, branding, placemaking en experience design.
-            Mijn focus ligt op het creëren van projecten en ervaringen die
-            mensen verbinden en organisaties helpen hun doelstellingen te bereiken.
-        </p>
-
-        <br><br>
+        <h2 class="section-title">Mijn Interesses</h2>
 
         <div class="grid">
 
             <div class="card">
-                <h3>Conceptontwikkeling</h3>
+                <h3>Concept &amp; Experience</h3>
                 <p>
-                    Het ontwikkelen van creatieve concepten die aansluiten bij
-                    doelgroepen, locaties en organisatiedoelen.
+                    Het bedenken en ontwikkelen van onderscheidende concepten en ervaringen.
                 </p>
             </div>
 
             <div class="card">
-                <h3>Branding</h3>
+                <h3>Branding &amp; Marketing</h3>
                 <p>
-                    Het bouwen van merkidentiteiten, positionering en merkverhalen
-                    vanaf de basis.
+                    Het vertalen van ideeën naar een herkenbare identiteit en sterke positionering.
                 </p>
             </div>
 
             <div class="card">
-                <h3>Experience Design</h3>
+                <h3>Place &amp; Community</h3>
                 <p>
-                    Het ontwerpen van ervaringen die mensen verbinden en waarde
-                    creëren voor organisaties.
+                    Het creëren van verbinding tussen mensen, organisaties en hun omgeving.
                 </p>
             </div>
 
@@ -282,24 +323,23 @@ nav ul{
 
     <div class="container">
 
-        <h2 class="section-title">Ervaring</h2>
+        <h2 class="section-title">Projectervaring</h2>
 
         <div class="grid">
 
             <div class="card">
 
-                <h3>Broodpoortje Placemaking</h3>
+                <h3>Broodpoortje | Placemaking</h3>
 
                 <p>
-                    Het transformeren van de ongebruikte sacristie en het
-                    onbekende Broodpoortje bij de Grote Kerk in Leeuwarden
-                    naar een plek van ontmoeting, activiteit en levendigheid.
+                    Van Grote Kerk naar Stadsklooster: een historische plek met een nieuwe toekomst.
                 </p>
 
                 <p>
-                    Door middel van placemaking werd onderzocht hoe bezoekers,
-                    bewoners en ondernemers zich opnieuw met deze historische
-                    locatie konden verbinden.
+                    Binnen dit project onderzochten we hoe het ongebruikte Broodpoortje kon uitgroeien
+                    tot een toegankelijke plek voor ontmoeting, inspiratie en levendigheid. Met
+                    placemaking zochten we naar manieren om de verbinding tussen deze bijzondere
+                    locatie en de stad Leeuwarden te versterken.
                 </p>
 
             </div>
@@ -307,6 +347,8 @@ nav ul{
             <div class="card">
 
                 <h3>Bakkie op de Brug</h3>
+
+                <img class="project-image" src="images/bakkie-op-de-brug.png" alt="Flyer voor Bakkie op de Brug van Harvey's Koffie To Go">
 
                 <p>
                     Een offline marketingcampagne voor Harvey's Koffie To Go
@@ -324,18 +366,24 @@ nav ul{
 
             <div class="card">
 
-                <h3>Climate Bridge</h3>
+                <h3>ClimateBridge | Branding</h3>
 
                 <p>
-                    Een nieuwe branding ontwikkeld vanaf ground zero voor
-                    Climate Bridge.
+                    Van Innovolab naar ClimateBridge: een brandingconcept ontwikkeld vanaf de basis.
                 </p>
 
                 <p>
-                    Climate Bridge is een virtuele hub die studenten,
-                    ondernemers en overheden verbindt om duurzame processen
-                    in Tanzania te stimuleren.
+                    Binnen dit project ontwikkelden we een nieuwe merkidentiteit voor ClimateBridge,
+                    een initiatief gericht op het verbinden van studenten, ondernemers en organisaties
+                    rondom duurzame innovatie in Tanzania.
                 </p>
+
+                <p>
+                    Vanuit het bestaande initiatief van Innovolab werkten we aan een vernieuwd
+                    merkconcept, inclusief een eigen logo en visuele identiteit. Het doel was om het
+                    initiatief een herkenbare en onderscheidende uitstraling te geven.
+                </p>
+                <a class="project-link" href="https://climatebridge.io/" target="_blank" rel="noopener noreferrer">Bekijk de huidige website van ClimateBridge</a>
 
             </div>
 
@@ -349,7 +397,7 @@ nav ul{
 
     <div class="container">
 
-        <h2 class="section-title">Persoonlijk</h2>
+        <h2 class="section-title">Waar sta ik voor</h2>
 
         <p>
             Ik ben Maurice Boschma, Student Event Management aan NHL Stenden.
@@ -359,20 +407,12 @@ nav ul{
 
         <br>
 
-        <p>
-            Ambitie, eerlijkheid en creativiteit vormen de basis van mijn
-            persoonlijke merk. Ik geloof dat sterke concepten ontstaan door
-            goed onderzoek, samenwerking en het daadwerkelijk omzetten van
-            ideeën naar actie.
-        </p>
+        <p>Creativiteit, ondernemerschap en verbinding vormen de basis van hoe ik werk.</p>
 
         <div class="values">
-            <div class="value">Ambitie</div>
-            <div class="value">Eerlijkheid</div>
-            <div class="value">Creativiteit</div>
-            <div class="value">Integriteit</div>
-            <div class="value">Nieuwsgierigheid</div>
-            <div class="value">Lef</div>
+            <div class="value"><strong>Creativiteit</strong>Ideeën en mogelijkheden zien.</div>
+            <div class="value"><strong>Ondernemerschap</strong>Initiatief nemen en dingen realiseren.</div>
+            <div class="value"><strong>Verbinding</strong>Mensen, ideeën en organisaties samenbrengen.</div>
         </div>
 
     </div>
@@ -399,9 +439,10 @@ nav ul{
             </p>
 
             <p>
-    maurice.jc.boschma@outlook.com">
-                Neem Contact Op
-            </a>
+                <a href="mailto:maurice.jc.boschma@outlook.com">maurice.jc.boschma@outlook.com</a>
+            </p>
+
+            <a href="mailto:maurice.jc.boschma@outlook.com" class="btn btn-primary">Neem Contact Op</a>
 
         </div>
 
