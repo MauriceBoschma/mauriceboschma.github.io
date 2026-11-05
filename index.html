@@ -1,0 +1,532 @@
+<<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoschmaProjects</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --dark:#0F172A;
+    --primary:#2563EB;
+    --accent:#F97316;
+    --light:#F8FAFC;
+    --text:#334155;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(15,23,42,.95);
+    z-index:1000;
+}
+
+.nav-wrapper{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    color:white;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(rgba(15,23,42,.85), rgba(15,23,42,.85)),
+    url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin-bottom:30px;
+}
+
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:64px;
+}
+
+.hero-copy{
+    flex:1;
+}
+
+.hero-portrait{
+    width:min(32vw,360px);
+    aspect-ratio:3 / 4;
+    object-fit:cover;
+    object-position:center 35%;
+    border-radius:24px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+    margin-left:15px;
+}
+
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    font-size:3rem;
+    margin-bottom:20px;
+    color:var(--dark);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.projects{
+    background:#eef2ff;
+}
+
+.about{
+    background:var(--dark);
+    color:white;
+}
+
+.about h2{
+    color:white;
+}
+
+.values{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+}
+
+.value{
+    flex:1 1 220px;
+    padding:20px;
+    border-radius:16px;
+    background:rgba(255,255,255,.1);
+}
+
+.value strong{
+    display:block;
+    margin-bottom:6px;
+    color:white;
+}
+
+.project-image{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-bottom:20px;
+    border-radius:12px;
+}
+
+.project-link{
+    display:inline-block;
+    margin-top:12px;
+    color:var(--primary);
+    font-weight:600;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    max-width:800px;
+    margin:auto;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:768px){
+
+.hero-content{
+    flex-direction:column-reverse;
+    align-items:flex-start;
+    gap:32px;
+    padding:120px 0 50px;
+}
+
+.hero-portrait{
+    width:min(72vw,300px);
+    max-height:350px;
+}
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+nav ul{
+    gap:15px;
+    font-size:14px;
+}
+
+.btn-secondary{
+    display:block;
+    margin:15px 0 0;
+    width:max-content;
+}
+}
+
+.card p {
+    margin-bottom: 16px;
+}
+.about p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+.flip-card {
+    background: transparent;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    text-align: left;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background: white;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-wrapper">
+        <div class="logo">BoschmaProjects</div>
+
+        <ul>
+            <li><a href="#brand">Mijn Interesses</a></li>
+            <li><a href="#ervaring">Projectervaring</a></li>
+            <li><a href="#persoonlijk">Over mij</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-copy">
+            <h1>Van idee naar beleving</h1>
+            <p>
+                Student Event Management met een passie voor conceptontwikkeling.
+                Ik krijg energie van het bedenken en ontwikkelen van creatieve concepten
+                die mensen, organisaties en locaties met elkaar verbinden. Van een eerste
+                idee tot een herkenbare identiteit en een ervaring die daadwerkelijk impact maakt.
+            </p>
+            <a href="#ervaring" class="btn btn-primary">Bekijk Projecten</a>
+            <a href="#contact" class="btn btn-secondary">Neem Contact Op</a>
+        </div>
+        <img class="hero-portrait" src="images/maurice-boschma.jpg" alt="Portretfoto van Maurice Boschma">
+    </div>
+</header>
+
+<section id="brand">
+
+    <div class="container">
+
+        <h2 class="section-title">Mijn Interesses</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Concept &amp; Experience</h3>
+                <p>
+                    Het bedenken en ontwikkelen van onderscheidende concepten en ervaringen.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Branding &amp; Marketing</h3>
+                <p>
+                    Het vertalen van ideeën naar een herkenbare identiteit en sterke positionering.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Place &amp; Community</h3>
+                <p>
+                    Het creëren van verbinding tussen mensen, organisaties en hun omgeving.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="ervaring" class="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">Projectervaring</h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>Broodpoortje | Placemaking</h3>
+
+                <p>
+                    Van Grote Kerk naar Stadsklooster: een historische plek met een nieuwe toekomst.
+                </p>
+  
+                <p>
+                    Binnen dit project onderzochten we hoe het ongebruikte Broodpoortje kon uitgroeien
+                    tot een toegankelijke plek voor ontmoeting, inspiratie en levendigheid. Met
+                    placemaking zochten we naar manieren om de verbinding tussen deze bijzondere
+                    locatie en de stad Leeuwarden te versterken.
+                </p>
+
+            </div>
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+
+        <!-- VOORKANT -->
+        <div class="flip-card-front">
+            <img class="project-image"
+                 src="images/bakkie-op-de-brug.png"
+                 alt="Flyer voor Bakkie op de Brug">
+        </div>
+
+        <!-- ACHTERKANT -->
+        <div class="flip-card-back">
+            <h3>Bakkie op de Brug</h3>
+
+            <p>
+                Een offline marketingcampagne voor Harvey's Koffie To Go
+                in Leeuwarden.
+            </p>
+
+            <p>
+                Om zich te onderscheiden van concurrenten werd het concept
+                "Bakkie op de Brug" ontwikkeld. Tijdens werkdagen kregen
+                voorbijgangers tussen 07:30 en 09:00 een gratis espresso shot
+                aangeboden op een drukke route naar werk en studie.
+            </p>
+        </div>
+
+
+            <div class="card">
+
+                <h3>ClimateBridge | Branding</h3>
+
+                <p>
+                    Van Innovolab naar ClimateBridge: een brandingconcept ontwikkeld vanaf de basis.
+                </p>
+
+                
+                <p>
+                    Binnen dit project ontwikkelden we een nieuwe merkidentiteit voor ClimateBridge,
+                    een initiatief gericht op het verbinden van studenten, ondernemers en organisaties
+                    rondom duurzame innovatie in Tanzania.
+                </p>
+
+                
+                <p>
+                    Vanuit het bestaande initiatief van Innovolab werkten we aan een vernieuwd
+                    merkconcept, inclusief een eigen logo en visuele identiteit. Het doel was om het
+                    initiatief een herkenbare en onderscheidende uitstraling te geven.
+                </p>
+               
+                <a class="project-link" href="https://climatebridge.io/" target="_blank" rel="noopener noreferrer">Bekijk de huidige website van ClimateBridge</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="persoonlijk" class="about">
+
+    <div class="container">
+
+        <h2 class="section-title">Over mij</h2>
+
+       <p>
+Sinds 2023 studeer ik Eventmanagement aan NHL Stenden. Ik heb bewust voor deze opleiding gekozen omdat ik gefascineerd ben door de impact die ervaringen en evenementen kunnen hebben op mensen. 
+Of het nu gaat om een zakelijke bijeenkomst, een community-evenement of een festival, elke ervaring laat een indruk achter. 
+Juist dat maakt het vakgebied voor mij zo interessant.
+</p>
+
+<p>
+Ik haal veel energie uit het contact met mensen en het begrijpen van hun behoeften, verwachtingen en motivaties. 
+Door goed te luisteren en te observeren ontdek ik wat mensen verbindt en wat een ervaring écht waardevol maakt. 
+Deze dynamiek zorgt ervoor dat je als eventprofessional continu moet blijven onderzoeken, ontwikkelen en innoveren.
+</p>
+
+<p>
+Tijdens mijn studie heb ik mij daarnaast verdiept in branding, marketing en strategische communicatie. 
+Hier leerde ik dat branding en marketing vaak met elkaar worden verward, terwijl ze juist verschillende rollen vervullen. 
+Branding vormt het fundament van een organisatie: de identiteit, waarden en het verhaal van binnenuit. Marketing vertaalt dit vervolgens naar de buitenwereld en zorgt ervoor dat de juiste doelgroep wordt bereikt. 
+Wanneer beide disciplines goed op elkaar zijn afgestemd, ontstaat een sterke en consistente merkbeleving.
+</p>
+
+<p>
+Deze combinatie van eventmanagement, branding en communicatie komt terug in de projecten die ik uitvoer. 
+Ik werk graag aan concepten die niet alleen creatief zijn, maar ook betekenisvol, strategisch onderbouwd en gericht op het creëren van blijvende impact.
+</p>
+
+        <br>
+
+        <div class="values">
+            <div class="value"><strong>Creativiteit</strong>Ideeën en mogelijkheden zien.</div>
+            <div class="value"><strong>Ondernemerschap</strong>Initiatief nemen en dingen realiseren.</div>
+            <div class="value"><strong>Verbinding</strong>Mensen, ideeën en organisaties samenbrengen.</div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-box">
+
+            <h3>Laten we samenwerken</h3>
+
+            <p>
+                Ben je op zoek naar een enthousiaste Student Event Management
+                voor een project, stageplaats of samenwerking?
+            </p>
+
+            <p>
+                <a href="mailto:maurice.jc.boschma@outlook.com">maurice.jc.boschma@outlook.com</a>
+            </p>
+
+            <a href="mailto:maurice.jc.boschma@outlook.com" class="btn btn-primary">Neem Contact Op</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Maurice Boschma | Student Event Management
+</footer>
+
+</body>
+</html>
