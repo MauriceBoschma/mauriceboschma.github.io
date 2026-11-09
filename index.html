@@ -11,11 +11,11 @@
 
 <style>
 :root{
-    --dark:#0F172A;
-    --primary:#2563EB;
-    --accent:#F97316;
-    --light:#F8FAFC;
-    --text:#334155;
+    --dark:#32584F;
+    --primary:#78A89A;
+    --accent:#A8D5C3;
+    --light:#F5F9F7;
+    --text:#2F4F46;
 }
 
 *{
@@ -42,7 +42,7 @@ nav{
     position:fixed;
     top:0;
     width:100%;
-    background:rgba(15,23,42,.95);
+    background:rgba(50,88,79,.95);
     z-index:1000;
 }
 
@@ -67,13 +67,22 @@ nav ul{
 nav a{
     color:white;
     text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#CDE9DE;
 }
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
-    background:linear-gradient(rgba(15,23,42,.85), rgba(15,23,42,.85)),
+    background:
+    linear-gradient(
+        rgba(50,88,79,.82),
+        rgba(120,168,154,.75)
+    ),
     url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=80");
     background-size:cover;
     background-position:center;
@@ -121,6 +130,11 @@ nav a{
 .btn-primary{
     background:var(--primary);
     color:white;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    background:#5F8E7E;
 }
 
 .btn-secondary{
@@ -136,7 +150,7 @@ section{
 .section-title{
     font-size:3rem;
     margin-bottom:20px;
-    color:var(--dark);
+    color:#45695F;
 }
 
 .grid{
@@ -149,15 +163,21 @@ section{
     background:white;
     padding:30px;
     border-radius:16px;
+    border-top:4px solid var(--primary);
     box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .projects{
-    background:#eef2ff;
+    background:#E7F2ED;
 }
 
 .about{
-    background:var(--dark);
+    background:#45695F;
     color:white;
 }
 
@@ -196,7 +216,7 @@ section{
 .project-link{
     display:inline-block;
     margin-top:12px;
-    color:var(--primary);
+    color:#45695F;
     font-weight:600;
 }
 
@@ -214,7 +234,7 @@ section{
 }
 
 footer{
-    background:var(--dark);
+    background:#32584F;
     color:white;
     text-align:center;
     padding:30px;
@@ -266,7 +286,7 @@ nav ul{
 }
 
 .flip-hint {
-    background: rgba(15,23,42,0.9);
+    background: rgba(69,105,95,0.95);
     color: white;
     padding: 12px 16px;
     border-radius: 16px 16px 0 0;
@@ -367,6 +387,9 @@ nav ul{
         transform:translateY(0);
         opacity:1;
     }
+}
+    .btn{
+    box-shadow:0 6px 20px rgba(120,168,154,.25);
 }
 </style>
 </head>
