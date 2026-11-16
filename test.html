@@ -15,8 +15,8 @@
 
 :root{
     --bg:#0f172a;
-    --bg-light:#112240;
-    --text:#8892b0;
+    --card:#112240;
+    --text:#94a3b8;
     --heading:#e2e8f0;
     --accent:#64ffda;
 }
@@ -32,7 +32,6 @@ body{
     font-family:'Inter',sans-serif;
     background:var(--bg);
     color:var(--text);
-    line-height:1.8;
 }
 
 a{
@@ -40,11 +39,10 @@ a{
 }
 
 .layout{
-    max-width:1400px;
-    margin:auto;
     display:grid;
     grid-template-columns:420px 1fr;
-    min-height:100vh;
+    max-width:1400px;
+    margin:auto;
 }
 
 /* SIDEBAR */
@@ -54,42 +52,51 @@ a{
     top:0;
     height:100vh;
 
-    padding:100px 60px;
+    padding:100px 50px;
 
     display:flex;
     flex-direction:column;
     justify-content:space-between;
 }
 
-.name{
+.sidebar img{
+    width:220px;
+    height:280px;
+    object-fit:cover;
+    margin-bottom:30px;
+    border-radius:6px;
+}
+
+.sidebar h1{
+    color:var(--heading);
     font-size:4rem;
-    color:var(--heading);
     line-height:1;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
-.role{
+.sidebar h2{
     color:var(--heading);
-    font-size:1.35rem;
+    font-size:1.3rem;
+    margin-bottom:20px;
     font-weight:500;
-    margin-bottom:25px;
 }
 
-.sidebar-text{
+.sidebar p{
     max-width:320px;
+    line-height:1.8;
 }
 
 .side-nav{
     display:flex;
     flex-direction:column;
-    gap:24px;
-    margin-top:70px;
+    gap:22px;
+    margin-top:60px;
 }
 
 .side-nav a{
     color:var(--text);
+    letter-spacing:2px;
     text-transform:uppercase;
-    letter-spacing:3px;
     font-size:13px;
     transition:.3s;
 }
@@ -101,12 +108,11 @@ a{
 
 .socials{
     display:flex;
-    gap:25px;
+    gap:30px;
 }
 
 .socials a{
     color:var(--text);
-    transition:.3s;
 }
 
 .socials a:hover{
@@ -119,39 +125,32 @@ a{
     padding:100px 60px;
 }
 
-section{
-    margin-bottom:180px;
+.content section{
+    margin-bottom:160px;
 }
 
 .section-title{
     color:var(--heading);
-    font-size:1.8rem;
+    font-size:2rem;
     margin-bottom:40px;
 }
 
 .content p{
-    margin-bottom:25px;
+    line-height:1.9;
+    margin-bottom:24px;
 }
 
-/* ABOUT */
-
-.highlight{
-    color:var(--accent);
-}
-
-/* EXPERIENCE */
+/* TIMELINE */
 
 .timeline-item{
-
     display:grid;
-    grid-template-columns:140px 1fr;
+    grid-template-columns:120px 1fr;
     gap:30px;
-
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
 
 .timeline-date{
-    font-size:.9rem;
+    font-size:.85rem;
     color:#64748b;
 }
 
@@ -175,16 +174,15 @@ section{
 .project-card{
 
     display:grid;
+    grid-template-columns:220px 1fr;
 
-    grid-template-columns:240px 1fr;
-
-    gap:30px;
+    gap:25px;
 
     padding:24px;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    margin-bottom:35px;
+    margin-bottom:30px;
 
     transition:.3s;
 }
@@ -196,14 +194,14 @@ section{
 
 .project-card img{
     width:100%;
-    height:150px;
+    height:140px;
     object-fit:cover;
     border-radius:8px;
 }
 
 .project-card h3{
     color:var(--heading);
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .project-card p{
@@ -213,37 +211,19 @@ section{
 /* CONTACT */
 
 .contact-box{
-    background:var(--bg-light);
+    background:var(--card);
     padding:40px;
     border-radius:12px;
 }
 
-.contact-box a{
+.contact-link{
     color:var(--accent);
     font-size:1.1rem;
 }
 
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:var(--bg);
-}
-
-::-webkit-scrollbar-thumb{
-    background:#233554;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:#34507c;
-}
-
 /* MOBILE */
 
-@media(max-width:992px){
+@media (max-width: 992px){
 
 .layout{
     grid-template-columns:1fr;
@@ -255,12 +235,17 @@ section{
     padding:60px 30px;
 }
 
-.name{
+.sidebar img{
+    width:180px;
+    height:220px;
+}
+
+.sidebar h1{
     font-size:3rem;
 }
 
 .content{
-    padding:0 30px 80px;
+    padding:40px 30px 80px;
 }
 
 .project-card{
@@ -285,239 +270,185 @@ section{
 
 <div class="layout">
 
-    <!-- SIDEBAR -->
+<aside class="sidebar">
 
-    <aside class="sidebar">
+<div>
 
-        <div>
+<img src="images/maurice-boschma.jpg" alt="Maurice Boschma">
 
-            <h1 class="name">
-                Maurice
-                Boschma
-            </h1>
+<h1>Maurice Boschma</h1>
 
-            <h2 class="role">
-                Student Event Management
-            </h2>
+<h2>Student Event Management</h2>
 
-            <p class="sidebar-text">
-                Van idee naar beleving. Ik ontwikkel concepten,
-                merkervaringen en evenementen die mensen,
-                organisaties en locaties verbinden.
-            </p>
+<p>
+Van idee naar beleving. Ik ontwikkel concepten, merkervaringen,
+marketingcampagnes en evenementen die mensen, locaties en organisaties verbinden.
+</p>
 
-            <nav class="side-nav">
-                <a href="#about">Over mij</a>
-                <a href="#experience">Ervaring</a>
-                <a href="#projects">Projecten</a>
-                <a href="#contact">Contact</a>
-            </nav>
+<nav class="side-nav">
+<a href="#about">Over mij</a>
+<a href="#experience">Ervaring</a>
+<a href="#projects">Projecten</a>
+<a href="#contact">Contact</a>
+</nav>
 
-        </div>
+</div>
 
-        <div class="socials">
+<div class="socials">
+<a href="mailto:maurice.jc.boschma@outlook.com">E-mail</a>
+<a href="#">LinkedIn</a>
+</div>
 
-            <a href="mailto:maurice.jc.boschma@outlook.com">
-                E-mail
-            </a>
+</aside>
 
-            <a href="#">
-                LinkedIn
-            </a>
+<main class="content">
 
-        </div>
+<section id="about">
 
-    </aside>
+<h2 class="section-title">Over mij</h2>
 
-    <!-- CONTENT -->
+<p>
+Sinds 2023 studeer ik Event Management aan NHL Stenden. Binnen mijn studie
+heb ik een sterke interesse ontwikkeld voor branding, marketing,
+placemaking en experience design.
+</p>
 
-    <main class="content">
+<p>
+Ik geloof dat sterke concepten ontstaan wanneer strategie en creativiteit
+samenkomen. Daarom werk ik graag aan projecten waarin merkbeleving,
+identiteit en interactie centraal staan.
+</p>
 
-        <!-- ABOUT -->
+<p>
+Mijn doel is om ervaringen te ontwikkelen die niet alleen opvallen,
+maar ook daadwerkelijk betekenis hebben voor de doelgroep.
+</p>
 
-        <section id="about">
+</section>
 
-            <h2 class="section-title">
-                Over mij
-            </h2>
+<section id="experience">
 
-            <p>
-                Sinds 2023 studeer ik Event Management aan NHL Stenden.
-                Ik ben gefascineerd door de impact die ervaringen,
-                evenementen en merken kunnen hebben op mensen.
-            </p>
+<h2 class="section-title">Ervaring</h2>
 
-            <p>
-                Tijdens mijn studie heb ik mij verdiept in
-                <span class="highlight">branding</span>,
-                <span class="highlight">marketing</span>,
-                <span class="highlight">placemaking</span>
-                en strategische communicatie. Daarbij ontdekte ik dat
-                sterke concepten ontstaan wanneer creativiteit wordt
-                gecombineerd met een duidelijke strategie.
-            </p>
+<div class="timeline-item">
 
-            <p>
-                Ik werk graag aan projecten waarin verhalen,
-                locaties en mensen samenkomen om een ervaring
-                te creëren die betekenisvol én memorabel is.
-            </p>
+<div class="timeline-date">
+2023 - heden
+</div>
 
-        </section>
+<div class="timeline-content">
 
-        <!-- EXPERIENCE -->
+<h3>NHL Stenden</h3>
 
-        <section id="experience">
+<p>
+Student Event Management met focus op conceptontwikkeling,
+branding en marketingcommunicatie.
+</p>
 
-            <h2 class="section-title">
-                Ervaring
-            </h2>
+</div>
 
-            <div class="timeline-item">
+</div>
 
-                <div class="timeline-date">
-                    2023 - heden
-                </div>
+<div class="timeline-item">
 
-                <div class="timeline-content">
+<div class="timeline-date">
+2026
+</div>
 
-                    <h3>
-                        NHL Stenden
-                    </h3>
+<div class="timeline-content">
 
-                    <p>
-                        Student Event Management met een groeiende
-                        focus op branding, experience design,
-                        marketing en conceptontwikkeling.
-                    </p>
+<h3>Branding Minor</h3>
 
-                </div>
+<p>
+Verdieping in merkontwikkeling, positionering,
+merkstrategie en creatieve campagnes.
+</p>
 
-            </div>
+</div>
 
-            <div class="timeline-item">
+</div>
 
-                <div class="timeline-date">
-                    2026
-                </div>
+</section>
 
-                <div class="timeline-content">
+<section id="projects">
 
-                    <h3>
-                        Branding Minor
-                    </h3>
+<h2 class="section-title">Projecten</h2>
 
-                    <p>
-                        Verdieping in merkstrategie,
-                        positionering, merkontwikkeling
-                        en creatieve campagnes.
-                    </p>
+<div class="project-card">
 
-                </div>
+<img src="images/broodpoortje.jpg" alt="Broodpoortje">
 
-            </div>
+<div>
 
-        </section>
+<h3>Broodpoortje</h3>
 
-        <!-- PROJECTS -->
+<p>
+Placemakingproject rondom de transformatie van een historische
+locatie naar een plek voor ontmoeting, inspiratie en verbinding.
+</p>
 
-        <section id="projects">
+</div>
 
-            <h2 class="section-title">
-                Geselecteerde Projecten
-            </h2>
+</div>
 
-            <a class="project-card" href="#">
+<div class="project-card">
 
-                <img src="images/broodpoortje.jpg" alt="Broodpoortje">
+<img src="images/bakkie-op-de-brug.png" alt="Bakkie op de Brug">
 
-                <div>
+<div>
 
-                    <h3>
-                        Broodpoortje
-                    </h3>
+<h3>Bakkie op de Brug</h3>
 
-                    <p>
-                        Placemakingproject rondom de transformatie
-                        van een historische locatie naar een plek
-                        voor ontmoeting, inspiratie en verbinding.
-                    </p>
+<p>
+Offline marketingcampagne voor Harvey's Koffie To Go waarbij
+voorbijgangers tijdens de ochtendspits een gratis espresso shot ontvingen.
+</p>
 
-                </div>
+</div>
 
-            </a>
+</div>
 
-            <a class="project-card" href="#">
+<div class="project-card">
 
-                <img src="images/bakkie-op-de-brug.png" alt="Bakkie op de Brug">
+<img src="images/maurice-boschma.jpg" alt="ClimateBridge">
 
-                <div>
+<div>
 
-                    <h3>
-                        Bakkie op de Brug
-                    </h3>
+<h3>ClimateBridge</h3>
 
-                    <p>
-                        Offline marketingcampagne voor Harvey's
-                        Koffie To Go waarbij voorbijgangers tijdens
-                        de ochtendspits werden verrast met een gratis
-                        espresso shot.
-                    </p>
+<p>
+Ontwikkeling van een nieuwe merkidentiteit en positionering voor
+een duurzaam innovatieplatform dat studenten, ondernemers en
+organisaties met elkaar verbindt.
+</p>
 
-                </div>
+</div>
 
-            </a>
+</div>
 
-            <a
-                class="project-card"
-                href="https://climatebridge.io"
-                target="_blank">
+</section>
 
-<img src="images/maurice-boschma.jpg" alt="">
+<section id="contact">
 
-                <div>
+<h2 class="section-title">Contact</h2>
 
-                    <h3>
-                        ClimateBridge
-                    </h3>
+<div class="contact-box">
 
-                    <p>
-                        Ontwikkeling van een nieuwe merkidentiteit
-                        en visuele positionering voor een
-                        duurzaam innovatieplatform.
-                    </p>
+<p>
+Ben je op zoek naar een stagiair, projectpartner of creatieve
+conceptontwikkelaar? Neem gerust contact op.
+</p>
 
-                </div>
+<a class="contact-link"
+href="mailto:maurice.jc.boschma@outlook.com">
+maurice.jc.boschma@outlook.com
+</a>
 
-            </a>
+</div>
 
-        </section>
+</section>
 
-        <!-- CONTACT -->
-
-        <section id="contact">
-
-            <h2 class="section-title">
-                Contact
-            </h2>
-
-            <div class="contact-box">
-
-                <p>
-                    Op zoek naar een stagiair, samenwerking
-                    of iemand die graag meedenkt over concepten,
-                    branding en evenementen?
-                </p>
-
-                <a href="mailto:maurice.jc.boschma@outlook.com">
-                    maurice.jc.boschma@outlook.com
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
+</main>
 
 </div>
 
